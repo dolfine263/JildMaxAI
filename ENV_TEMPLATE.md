@@ -1,0 +1,5 @@
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+SHOPIFY_ACCESS_TOKEN=your_shopify_access_token
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com

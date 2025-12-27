@@ -1,158 +1,318 @@
--- Seed Data for JildMaxAI Demo
--- Run this in your Supabase SQL Editor after creating the schema
+-- Seed Data for JildMaxAI (Comprehensive NGlow.co Catalog)
+-- Run this in Supabase SQL Editor
+
+-- Clear existing products first
+TRUNCATE products;
 
 INSERT INTO products
-    (
-    shopify_product_id,
-    shopify_variant_id,
-    title,
-    handle,
-    description,
-    image_url,
-    price,
-    product_type,
-    skin_types,
-    concerns,
-    is_active
-    )
+  (
+  title,
+  product_url,
+  description,
+  image_url,
+  price,
+  product_type,
+  skin_types,
+  concerns,
+  is_active
+  )
 VALUES
-    -- Cleansers
-    (
-        'demo-001',
-        'demo-001-v1',
-        'Hydra-Glow Gentle Cleanser',
-        'hydra-glow-cleanser',
-        'A creamy, pH-balanced cleanser that removes impurities without stripping the skin. Enriched with Ceramides and Hyaluronic Acid.',
-        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400',
-        24.99,
-        'Cleanser',
-        ARRAY
-['Dry', 'Sensitive', 'Normal'],
-  ARRAY['Dehydration', 'Redness'],
+
+  -- ==================== FACEWASHES ====================
+  (
+    'Whitening Flawless Face Wash',
+    'https://nglow.co/products/whitening-flawless-face-wash',
+    'Brightens & deeply cleanses. Enriched with Kojic Acid, Niacinamide & Vitamin C for radiant, even-toned skin.',
+    'https://nglow.co/cdn/shop/files/8.png?v=1762239950&width=1200',
+    499.00,
+    'Facewash',
+    ARRAY
+['Oily', 'Combination', 'Normal'],
+  ARRAY['Pigmentation', 'Dullness', 'Uneven Tone'],
   true
 ),
 (
-  'demo-002',
-  'demo-002-v1',
-  'PoreControl Foaming Cleanser',
-  'porecontrol-foaming-cleanser',
-  'Lightweight foam cleanser with Salicylic Acid (0.5%) and Tea Tree. Clears congestion and minimizes pores.',
-  'https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=400',
-  19.99,
+  'Strawberry Face Wash',
+  'https://nglow.co/products/strawberry-face-wash',
+  'Hydrate, Cleanse & Revitalize. A refreshing fruity wash for a quick energy boost.',
+  'https://nglow.co/cdn/shop/files/10.png?v=1757683856&width=1200', 
+  480.00,
+  'Facewash',
+  ARRAY['Normal', 'Oily'],
+  ARRAY['Dullness', 'Refreshing'],
+  true
+),
+(
+  'Aloe Vera Face Wash',
+  'https://nglow.co/products/aloe-vera-face-wash',
+  'Hydrate, Soothe & Refresh. A gentle cleanser perfect for sensitive or irritated skin.',
+  'https://nglow.co/cdn/shop/files/3_cc8f79d5-357c-4d4f-95f0-bc2be74343a8.png?v=1757683715&width=1200',
+  480.00,
+  'Facewash',
+  ARRAY['Sensitive', 'Dry', 'Redness'],
+  ARRAY['Redness', 'Dehydration', 'Sensitivity'],
+  true
+),
+(
+  'Vitamin C Face Wash',
+  'https://nglow.co/products/vitamin-c-face-wash',
+  'Brighten & Purify for Radiant Skin. Targeted for glowing skin.',
+  'https://nglow.co/cdn/shop/files/9.png?v=1757683919&width=1200',
+  480.00,
+  'Facewash',
+  ARRAY['Dull', 'Normal', 'Dry'],
+  ARRAY['Dullness', 'Glow'],
+  true
+),
+(
+  'Charcoal Face Wash',
+  'https://nglow.co/products/charcoal-face-wash',
+  'Purify, Detox & Brighten Skin Naturally. Deep cleanses pores, removes impurities & prevents acne.',
+  'https://nglow.co/cdn/shop/files/14.png?v=1757683768&width=1200',
+  480.00,
+  'Facewash',
+  ARRAY['Oily', 'Acne-Prone'],
+  ARRAY['Acne', 'Oiliness', 'Detox'],
+  true
+),
+
+-- ==================== CLEANSERS ====================
+(
+  'All Day Vitamin Cleanser',
+  'https://nglow.co/products/all-day-vitamin-cleanser',
+  'Brightening & Nourishing Face Wash. gentle daily cleanser enriched with vitamins to refresh and energize tired skin.',
+  'https://nglow.co/cdn/shop/files/5.png?v=1757683624&width=1200',
+  550.00,
   'Cleanser',
-  ARRAY['Oily', 'Combination'],
-  ARRAY['Acne', 'Texture'],
+  ARRAY['Normal', 'Dull', 'Combination'],
+  ARRAY['Dullness', 'Uneven Tone'],
+  true
+),
+(
+  'Collagen Daily Facial Cleanser',
+  'https://nglow.co/products/collagen-daily-facial-cleanser',
+  'Deep Cleansing & Skin Renewal. Promotes elasticity and removes impurities specifically for aging skin.',
+  'https://nglow.co/cdn/shop/files/1_0307b577-2d2d-47cc-afdd-c53fe1c73ef9.png?v=1757525039&width=1200',
+  600.00,
+  'Cleanser',
+  ARRAY['Mature', 'Dry', 'Normal'],
+  ARRAY['Aging', 'Fine Lines', 'Texture'],
+  true
+),
+(
+  'Aloe Vera Facial Cleanser',
+  'https://nglow.co/products/aloe-vera-facial-cleanser',
+  'Hydrating & Soothing Formula. A gentle, non-stripping cleanser for sensitive and irritated skin.',
+  'https://nglow.co/cdn/shop/files/1_bf1d3d2c-ce6b-4056-842a-1ccfdf476747.png?v=1757524404&width=1200',
+  480.00,
+  'Cleanser',
+  ARRAY['Sensitive', 'Dry', 'Redness'],
+  ARRAY['Redness', 'Dehydration', 'Sensitivity'],
+  true
+),
+(
+  'Rice Water Cleanser',
+  'https://nglow.co/products/rice-water-cleanser',
+  'Gentle Hydration for a Radiant Glow. Inspired by K-Beauty, rice water brightens and softens the skin.',
+  'https://nglow.co/cdn/shop/files/1.png?v=1757524107&width=1200',
+  550.00,
+  'Cleanser',
+  ARRAY['Normal', 'Combination', 'Dull'],
+  ARRAY['Dullness', 'Uneven Tone', 'Texture'],
+  true
+),
+(
+  'Salicylic Acid Cleanser',
+  'https://nglow.co/products/salicylic-acid-cleanser',
+  'Purify, Clear & Prevent Breakouts. Deep cleanses pores to remove excess oil and prevent acne.',
+  'https://nglow.co/cdn/shop/files/2_c8b1f98b-03ff-4348-944f-96766735b094.png?v=1757525158&width=1200',
+  599.00,
+  'Cleanser',
+  ARRAY['Oily', 'Acne-Prone'],
+  ARRAY['Acne', 'Breakouts', 'Oiliness'],
   true
 ),
 
--- Treatments / Serums
+-- ==================== SERUMS ====================
 (
-  'demo-003',
-  'demo-003-v1',
-  'Vitamin C Radiance Serum',
-  'vitamin-c-serum',
-  '15% L-Ascorbic Acid + Ferulic Acid. Brightens dark spots and protects against environmental damage.',
-  'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400',
-  45.00,
+  'Collagen Daily Serum',
+  'https://nglow.co/products/collagen-daily-serum',
+  'Purify, Hydrate & Revitalize Skin. Boosts skin elasticity and plumpness for a youthful look.',
+  'https://nglow.co/cdn/shop/files/2_854e2fe4-a68b-487c-9887-e5fb9db5a4b9.png?v=1757683993&width=1200',
+  1080.00,
   'Treatment',
-  ARRAY['Normal', 'Combination', 'Oily'],
-  ARRAY['Pigmentation', 'Aging'],
+  ARRAY['Mature', 'Normal', 'Dry'],
+  ARRAY['Aging', 'Fine Lines', 'Sagging'],
   true
 ),
 (
-  'demo-004',
-  'demo-004-v1',
-  'Retinol Night Renewal Serum',
-  'retinol-night-serum',
-  '0.5% Encapsulated Retinol for sensitive skin. Reduces fine lines and smooths texture overnight.',
-  'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=400',
-  52.00,
+  'NGlow Glutathione Serum',
+  'https://nglow.co/products/nglow-glutathione-serum',
+  'Brightening & Hydrating Antioxidant Serum. Reduces dark spots and promotes a brighter, even complexion.',
+  'https://nglow.co/cdn/shop/files/3_2b136153-9901-4185-a1ad-404ba146d922.png?v=1762237323&width=1200',
+  1080.00,
   'Treatment',
-  ARRAY['Normal', 'Dry', 'Combination'],
-  ARRAY['Aging', 'Texture'],
+  ARRAY['Normal', 'Combination', 'Dry'],
+  ARRAY['Pigmentation', 'Dullness', 'Dark Spots'],
   true
 ),
 (
-  'demo-005',
-  'demo-005-v1',
-  'Niacinamide Pore Refiner',
-  'niacinamide-pore-refiner',
-  '10% Niacinamide + Zinc. Minimizes pores, controls oil, and evens skin tone.',
-  'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400',
-  28.00,
+  'Retinol Serum',
+  'https://nglow.co/products/retinol-serum',
+  'Anti-Aging & Skin Renewal Formula. Reduces wrinkles and improves skin texture. Use at night.',
+  'https://nglow.co/cdn/shop/files/3_240e775a-7ebf-4a41-8ba6-1e0b79a05504.png?v=1762239578&width=1200',
+  1080.00,
   'Treatment',
-  ARRAY['Oily', 'Combination'],
-  ARRAY['Acne', 'Texture', 'Pigmentation'],
+  ARRAY['Mature', 'Dry', 'Normal'],
+  ARRAY['Aging', 'Fine Lines', 'Texture'],
+  true
+),
+(
+  'Glow Serum',
+  'https://nglow.co/products/glow-serum-k-beauty-hydration-brightening-formula',
+  'Korean Beauty Hydration & Brightening Formula. Gives the ultimate glass-skin finish.',
+  'https://nglow.co/cdn/shop/files/3_d3767699-d1ee-46dc-96dd-2d1efa423104.png?v=1762239127&width=1200',
+  1499.00,
+  'Treatment',
+  ARRAY['Normal', 'Dry', 'Dull'],
+  ARRAY['Dullness', 'Dehydration', 'Glow'],
+  true
+),
+(
+  'Hyaluronic Acid + Vit C Serum',
+  'https://nglow.co/products/hyaluronic-acid-vit-c-serum',
+  'Intense Hydration & Skin Barrier Support. Plumps skin and protects against environmental damage.',
+  'https://nglow.co/cdn/shop/files/3_0bb52feb-2d52-41d2-abe4-519f80cac3ea.png?v=1762239359&width=1200',
+  1250.00,
+  'Treatment',
+  ARRAY['Dry', 'Dehydrated', 'Normal'],
+  ARRAY['Dehydration', 'Dullness'],
+  true
+),
+(
+  'Salicylic Acid Serum',
+  'https://nglow.co/products/salicylic-acid-serum',
+  'Acne-Fighting & Pore-Unclogging Formula. Targets active acne and blackheads.',
+  'https://nglow.co/cdn/shop/files/3_d770f616-7d86-4688-9926-823eee313ebf.png?v=1762239795&width=1200',
+  1080.00,
+  'Treatment',
+  ARRAY['Oily', 'Acne-Prone'],
+  ARRAY['Acne', 'Large Pores', 'Blackheads'],
+  true
+),
+(
+  'Glycolic Acid + VIT B5 Serum',
+  'https://nglow.co/products/glycolic-acid-vit-b5-serum',
+  'Exfoliate, Hydrate & Renew Skin. Gently exfoliates dead skin cells to reveal smoother skin.',
+  'https://nglow.co/cdn/shop/files/2_ac6412b9-5dcb-4922-8dfd-045d417fd0a6.png?v=1762239706&width=1200',
+  1150.00,
+  'Treatment',
+  ARRAY['Combination', 'Normal', 'Oily'],
+  ARRAY['Texture', 'Dullness', 'Congestion'],
+  true
+),
+(
+  'Niacinamide Serum',
+  'https://nglow.co/products/niacinamide-serum-brightening-oil-control-formula',
+  'Brightening & Oil Control Formula. Balances sebum production and minimizes pores.',
+  'https://nglow.co/cdn/shop/files/1_5c34fe58-1896-476f-b18a-517fbad9d51a.png?v=1762238885&width=1200',
+  1080.00,
+  'Treatment',
+  ARRAY['Oily', 'Combination', 'Sensitive'],
+  ARRAY['Oiliness', 'Pores', 'Redness'],
   true
 ),
 
--- Moisturizers
+-- ==================== SUNBLOCK ====================
 (
-  'demo-006',
-  'demo-006-v1',
-  'Barrier Repair Moisturizer',
-  'barrier-repair-moisturizer',
-  'Rich, non-greasy cream with 5 Ceramides and Squalane. Restores damaged skin barrier.',
-  'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400',
-  38.00,
-  'Moisturizer',
-  ARRAY['Dry', 'Sensitive'],
-  ARRAY['Dehydration', 'Redness'],
-  true
-),
-(
-  'demo-007',
-  'demo-007-v1',
-  'Oil-Free Hydrating Gel',
-  'oil-free-hydrating-gel',
-  'Lightweight water-gel formula with Hyaluronic Acid. Hydrates without clogging pores.',
-  'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=400',
-  32.00,
-  'Moisturizer',
-  ARRAY['Oily', 'Combination', 'Normal'],
-  ARRAY['Dehydration', 'Acne'],
-  true
-),
-
--- Sunscreens
-(
-  'demo-008',
-  'demo-008-v1',
-  'Invisible Shield SPF 50+',
-  'invisible-shield-spf50',
-  'Ultra-light, no white cast sunscreen. Broad spectrum UVA/UVB protection with antioxidant complex.',
-  'https://images.unsplash.com/photo-1556227834-09f1de7a7d14?w=400',
-  29.99,
+  'Sunblock SPF 70+',
+  'https://nglow.co/products/sunblock-spf-70',
+  'Lightweight, Oil-Free, Broad-Spectrum Protection. No white cast finish.',
+  'https://nglow.co/cdn/shop/files/1_33184255-1b7c-4782-87c3-3a0b3e00798c.png?v=1762238603&width=1200',
+  720.00,
   'Sunscreen',
-  ARRAY['Normal', 'Oily', 'Combination'],
-  ARRAY['Aging', 'Pigmentation'],
+  ARRAY['All'],
+  ARRAY['Sun Protection'],
   true
 ),
 (
-  'demo-009',
-  'demo-009-v1',
-  'Sensitive Mineral Sunscreen SPF 40',
-  'sensitive-mineral-spf40',
-  '100% Zinc Oxide formula. Gentle enough for rosacea-prone and post-procedure skin.',
-  'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400',
-  34.00,
+  'Tinted Sunblock SPF 60+',
+  'https://nglow.co/products/tinted-sunblock-spf-60',
+  'Lightweight, Oil-Free, Broad-Spectrum Protection with a subtle tint to even skin tone.',
+  'https://nglow.co/cdn/shop/files/2_7beacc6f-3682-404e-845b-e9559dfac8a4.png?v=1762238542&width=1200',
+  850.00,
   'Sunscreen',
-  ARRAY['Dry', 'Sensitive'],
-  ARRAY['Redness', 'Aging'],
+  ARRAY['All'],
+  ARRAY['Sun Protection', 'Uneven Tone'],
   true
 ),
 
--- Specialty
+-- ==================== TONERS ====================
 (
-  'demo-010',
-  'demo-010-v1',
-  'Calming Centella Toner',
-  'calming-centella-toner',
-  'Alcohol-free toner with Centella Asiatica (CICA) and Panthenol. Soothes irritation and preps skin.',
-  'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400',
-  22.00,
+  'Vitamin C Toner',
+  'https://nglow.co/products/vitamin-c-toner',
+  'Brighten, Hydrate & Refresh. Preps skin and boosts glow.',
+  'https://nglow.co/cdn/shop/files/1_38779720-d137-4e35-97bf-0d590c41ef9a.png?v=1757525349&width=1200',
+  510.00,
   'Other',
-  ARRAY['Sensitive', 'Dry', 'Normal'],
-  ARRAY['Redness', 'Dehydration'],
+  ARRAY['Normal', 'Dull', 'Combination'],
+  ARRAY['Dullness', 'Hydration'],
+  true
+),
+(
+  'Natural Rose Water Toner',
+  'https://nglow.co/products/natural-rose-water-toner',
+  'Glow-Boosting & Pore-Tightening. Calming and refreshing mist.',
+  'https://nglow.co/cdn/shop/files/1_cfe51033-6204-4b04-8f9e-f82460498b96.png?v=1757526815&width=1200',
+  450.00,
+  'Other',
+  ARRAY['All', 'Sensitive'],
+  ARRAY['Dehydration', 'Refreshing'],
+  true
+),
+(
+  'Tea Tree Oil Face Toner',
+  'https://nglow.co/products/tea-tree-oil-face-toner',
+  'Acne-Fighting & Pore-Tightening Formula. Antibacterial toner for prone skin.',
+  'https://nglow.co/cdn/shop/files/1_f22417ad-4096-4cc2-b622-2c384d69a7d1.png?v=1757525624&width=1200',
+  550.00,
+  'Other',
+  ARRAY['Oily', 'Acne-Prone'],
+  ARRAY['Acne', 'Oiliness'],
+  true
+),
+
+-- ==================== MOISTURIZERS ====================
+(
+  'Almond Milk Moisturizer',
+  'https://nglow.co/products/almond-milk-moisturizer',
+  'Deep Hydration & Nourishment. Rich cream for dry skin types.',
+  'https://nglow.co/cdn/shop/files/1_ff097e18-79c8-4e8f-bb1b-c67e0985380f.png?v=1762238324&width=1200',
+  1199.00,
+  'Moisturizer',
+  ARRAY['Dry', 'Normal'],
+  ARRAY['Dryness', 'Dehydration'],
+  true
+),
+(
+  'Shea Butter Moisturizer',
+  'https://nglow.co/products/shea-butter-moisturizer',
+  'Deep Hydration & Nourishment. Intense moisture for very dry skin.',
+  'https://nglow.co/cdn/shop/files/1_649a9d3a-2c57-4a1d-a942-122981fac378.png?v=1762237451&width=1200',
+  1150.00,
+  'Moisturizer',
+  ARRAY['Dry', 'Very Dry'],
+  ARRAY['Dryness', 'Roughness'],
+  true
+),
+(
+  'Aloe Vera & Vitamin E Cream',
+  'https://nglow.co/products/aloe-vera-vitamin-e-moisturizing-cream',
+  'Hydrate, Nourish & Revitalize. Lightweight daily cream for all skin types.',
+  'https://nglow.co/cdn/shop/files/1_5eb29131-d76a-41dc-a649-4e202dab22ee.png?v=1762237583&width=1200',
+  950.00,
+  'Moisturizer',
+  ARRAY['All', 'Normal'],
+  ARRAY['Hydration', 'Maintenance'],
   true
 );

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Skin Analysis Results</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF6B6B", // A playful coral for primary actions
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#18181B",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#27272A",
+                        "issue-red-bg": "#FFE4E6",
+                        "issue-red-border": "#FECDD3",
+                        "issue-red-text": "#E11D48",
+                        "issue-yellow-bg": "#FEF3C7",
+                        "issue-yellow-border": "#FDE68A",
+                        "issue-yellow-text": "#D97706",
+                        "dark-text": "#334155",
+                        "light-text": "#94A3B8"
+                    },
+                    fontFamily: {
+                        display: ["Fredoka", "sans-serif"], // Playful font for headers
+                        body: ["Nunito Sans", "sans-serif"], // Professional font for body
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': "1.5rem",
+                        '2xl': "2rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(255, 107, 107, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen font-body text-dark-text dark:text-gray-200 transition-colors duration-300">
+    <div class="max-w-md mx-auto min-h-screen pb-24 relative overflow-hidden">
+        <header
+            class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 glass-effect px-6 py-4 flex justify-between items-center border-b border-gray-100 dark:border-gray-800">
+            <button
+                class="p-2 -ml-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition">
+                <span class="material-icons-round">arrow_back</span>
+            </button>
+            <h1 class="font-display font-semibold text-lg tracking-wide text-gray-800 dark:text-white">Analysis</h1>
+            <button
+                class="p-2 -mr-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition">
+                <span class="material-icons-round">share</span>
+            </button>
+        </header>
+        <main class="px-6 pt-6 space-y-8 animate-fade-in-up">
+            <div class="text-center space-y-2">
+                <h2 class="font-display font-bold text-3xl text-gray-900 dark:text-white leading-tight">Your Analysis
+                    <span class="text-primary">Results</span>
+                </h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Based on AI scan from today, 9:41 AM</p>
+            </div>
+            <div
+                class="bg-card-light dark:bg-card-dark p-6 rounded-2xl shadow-soft border border-gray-100 dark:border-gray-700 relative overflow-hidden group">
+                <div
+                    class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -mr-8 -mt-8 group-hover:bg-primary/20 transition duration-500">
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center space-y-4">
+                    <div
+                        class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-500 dark:text-blue-300 mb-2">
+                        <span class="material-icons-round text-2xl">face</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
+                        "The individual has a <span class="text-gray-900 dark:text-white font-bold">combination skin
+                            type</span> with visible redness and acne scars. The skin appears uneven and may benefit
+                        from targeted solutions to soothe redness."
+                    </p>
+                </div>
+            </div>
+            <section class="space-y-4">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-icons-round text-blue-500">info</span>
+                    <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white">Issues Detected</h3>
+                </div>
+                <div
+                    class="bg-issue-red-bg dark:bg-red-900/20 border border-issue-red-border dark:border-red-800/50 rounded-2xl p-4 flex items-center justify-between shadow-sm transform transition hover:scale-[1.02] active:scale-95 cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-white/60 dark:bg-white/10 rounded-full flex items-center justify-center text-issue-red-text dark:text-red-400">
+                            <span class="material-icons-round">wb_sunny</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-issue-red-text dark:text-red-300">Redness
+                            </h4>
+                            <p class="text-xs text-red-800/60 dark:text-red-300/60 font-medium">Cheeks &amp; Forehead
+                            </p>
+                        </div>
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-white/50 dark:bg-red-900/40 rounded-full text-xs font-bold text-issue-red-text dark:text-red-300 uppercase tracking-wider border border-white/20">High</span>
+                </div>
+                <div
+                    class="bg-issue-yellow-bg dark:bg-amber-900/20 border border-issue-yellow-border dark:border-amber-800/50 rounded-2xl p-4 flex items-center justify-between shadow-sm transform transition hover:scale-[1.02] active:scale-95 cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-white/60 dark:bg-white/10 rounded-full flex items-center justify-center text-issue-yellow-text dark:text-amber-400">
+                            <span class="material-icons-round">error_outline</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-issue-yellow-text dark:text-amber-300">Acne
+                                Scars</h4>
+                            <p class="text-xs text-amber-800/60 dark:text-amber-300/60 font-medium">Chin Area</p>
+                        </div>
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-white/50 dark:bg-amber-900/40 rounded-full text-xs font-bold text-issue-yellow-text dark:text-amber-300 uppercase tracking-wider border border-white/20">Medium</span>
+                </div>
+            </section>
+            <section class="space-y-4 pt-4">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-orange-100 dark:bg-orange-900/30 p-2 rounded-xl text-orange-500">
+                            <span class="material-icons-round text-2xl">wb_twilight</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white">Morning Routine
+                            </h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Start your day right</p>
+                        </div>
+                    </div>
+                    <button class="text-primary text-sm font-bold hover:text-red-400 transition">View All</button>
+                </div>
+                <div class="flex overflow-x-auto gap-4 pb-4 -mx-6 px-6 scrollbar-hide snap-x">
+                    <div
+                        class="snap-center shrink-0 w-64 bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-soft border border-gray-100 dark:border-gray-700 flex flex-col relative group">
+                        <div
+                            class="absolute top-4 left-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                            STEP 1</div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-xl h-40 mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img alt="Abstract Cleanser Bottle"
+                                class="h-full w-full object-cover mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRJzmmw1QwKaoo3Ya-Qi7XcUbovNA6azITga5cZdS7gofnH66ANHoZzyU_k4Z0VCL83JO0XbTD5dVQT7cB67Snt8tmDn2_NAcU5Rsir1h78qSvypOHku0IMvQ39ca-siuoCPSSKSxpJxFFCcD6ihjOQJ2RmQVnVcsThvXDiH7jhRA-fF92aVd49eT77ZhUtyCym48woUR8uWZkHbRLSV95OPqdFYCLn6jWeZn0Usm-c_JCWpdMnhSyvVuSpKJTLW79NLClefq-gg" />
+                        </div>
+                        <div class="flex-1 flex flex-col">
+                            <h4 class="font-display font-bold text-gray-900 dark:text-white text-lg">Gentle Cleanser
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 mb-3">Soothes redness immediately
+                            </p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="font-bold text-primary">$24.00</span>
+                                <button
+                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-glow hover:bg-red-500 transition">
+                                    <span class="material-icons-round text-sm">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="snap-center shrink-0 w-64 bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-soft border border-gray-100 dark:border-gray-700 flex flex-col relative group">
+                        <div
+                            class="absolute top-4 left-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                            STEP 2</div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-xl h-40 mb-4 flex items-center justify-center overflow-hidden relative">
+                            <img alt="Serum Bottle"
+                                class="h-full w-full object-cover mix-blend-multiply dark:mix-blend-normal opacity-90 group-hover:scale-105 transition duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5cx0Q6kt_Ms02zRbUNzgW18ZOn229OrVcJfugKF9gsYfAkW6hOn0pnaR5-_Ih2wci6KVuSN_F4dCT0NWijUYiT22FCytDkp3_Afiltjpix2lJX9WYJRaDQsgQwwaFMC64vlXro_MDT46EGV1RgJxDELo39E-A2H1Ai-WzhvCTxAqoPWGvQEHyXGThqfF1xKCRvS_xuxgRN6rsqkLBB-3uHXKaPyn0JINDAY_QsYj78RUOv83IDLx6d52qP_ir7eKPQs0sQLGSCg" />
+                        </div>
+                        <div class="flex-1 flex flex-col">
+                            <h4 class="font-display font-bold text-gray-900 dark:text-white text-lg">Vitamin C Serum
+                            </h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 mb-3">Targets acne scars &amp; spots
+                            </p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="font-bold text-primary">$48.00</span>
+                                <button
+                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-glow hover:bg-red-500 transition">
+                                    <span class="material-icons-round text-sm">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="fixed bottom-6 right-6 z-40">
+            <button
+                class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 p-4 rounded-full shadow-lg hover:scale-105 transition flex items-center gap-2">
+                <span class="material-icons-round">center_focus_weak</span>
+                <span class="font-bold text-sm pr-1">Scan Again</span>
+            </button>
+        </div>
+        <nav
+            class="fixed bottom-0 w-full max-w-md bg-white dark:bg-card-dark border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6 flex justify-between items-center z-50 rounded-t-2xl shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+            <button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-primary transition">
+                <span class="material-icons-round text-2xl">home</span>
+                <span class="text-[10px] font-bold">Home</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 p-2 text-primary transition">
+                <span class="material-icons-round text-2xl">analytics</span>
+                <span class="text-[10px] font-bold">Analysis</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-primary transition">
+                <span class="material-icons-round text-2xl">shopping_bag</span>
+                <span class="text-[10px] font-bold">Shop</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-primary transition">
+                <span class="material-icons-round text-2xl">person</span>
+                <span class="text-[10px] font-bold">Profile</span>
+            </button>
+        </nav>
+    </div>
+
+</body>
+
+</html>
